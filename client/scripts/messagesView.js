@@ -8,6 +8,9 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+
+
+
   },
 
   render: function() {
@@ -16,6 +19,9 @@ var MessagesView = {
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+    console.log({message});
+    $( '#chats' ).append( `<div>${message.text}</div>` );
+
   },
 
   handleClick: function(event) {

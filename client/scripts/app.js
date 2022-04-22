@@ -8,6 +8,25 @@ var App = {
 
   username: 'anonymous',
 
+  message: {
+    username: 'Its a Me Mario',
+    text: 'Hello World',
+    roomname: '4chan'
+  },
+
+  compiled: _.template(
+    '<div class=\'module module-movie\' style=\'background-image: url(<%= movieImage %>)\'>' +
+    '<div class=\'movie-info\'>' +
+    '<h3 class=\'movie-title\'>' +
+    '<%= movieTitle %>' +
+    '</h3>' +
+    '<p class=\'movie-director\'>' +
+    '<%= movieDirector %>' +
+    '</p>' +
+    '</div>' +
+    '</div>'
+  ),
+
   initialize: function() {
     App.username = window.location.search.substr(10);
 
@@ -21,6 +40,16 @@ var App = {
 
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
+
+
+    setInterval(App.fetch, 5000);
+    // var i;
+    // var html = '';
+    // for (i = 0; i < data.movies.length; i++) {
+    //   html += compiled(data.movies[i]);
+    // }
+    // $('#movies').append(html);
+
   },
 
   fetch: function(callback = ()=>{}) {
@@ -30,6 +59,9 @@ var App = {
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+
+
+
     });
   },
 
