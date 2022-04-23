@@ -25,9 +25,12 @@ var Friends = {
   },
   toggleStatus: function (usernameClicked) {
     //checks if friend is in data
-    if (Friends._data[usernameClicked]) {
-      delete Friends._data[usernameClicked];
-    } else {
+    console.log('Clicked the Username:', usernameClicked);
+
+    // if (Friends._data[usernameClicked]) {
+    //   delete Friends._data[usernameClicked];
+    // }
+    if (!Friends._data[usernameClicked]) {
       // if  it exists then toggle
       // else addFriend
       Friends.addFriend(usernameClicked);

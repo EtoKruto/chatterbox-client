@@ -23,23 +23,33 @@ var MessagesView = {
       MessagesView.renderMessage(Messages._data[i]);
     }
 
-    $('.username').click(function(event) {
-      console.log('this', this.id);
-      MessagesView.handleClick(this.id);
-    });
+
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+    // let styleVariable;
+    // if (Friends._data[message.username]) {
+    //   styleVariable = 'background-color: rgba(0,0,0,0.64)';
+    // }
+
+    //if Friends._data has a friend as the message.username then add attribute
+
 
     var $singleMessageContainer = $('<div id="singleMessageContainer"></div>');
 
     $singleMessageContainer.append(`<a class='username' id="${message.username}">Username: ${message.username}</a>`);
     $singleMessageContainer.append(`<div id='singleMessage'>Message:  ${message.text} </div>`);
-    $singleMessageContainer.append(`<div id='singleMessage'>Room Name: ${message.roomName}</div>`);
+    $singleMessageContainer.append(`<div id='singleMessage'>Room Name: ${message.roomname}</div>`);
     $singleMessageContainer.append('<div >-------------------------------</div>');
 
-    MessagesView.$chats.append($singleMessageContainer);
+    $('.username').click(function(event) {
+      console.log('this', this.id);
+      console.log('Clicked the event:', event);
+      MessagesView.handleClick(this.id);
+    });
+
+    MessagesView.$chats.prepend($singleMessageContainer);
 
 
   },
@@ -47,7 +57,7 @@ var MessagesView = {
   handleClick: function(username) {
     // TODO: handle a user clicking on a message
     // (this should add the sender to the user's friend list).
-    // console.log('hi');
+    console.log('hi, user is:', username);
     Friends.toggleStatus(username);
 
 

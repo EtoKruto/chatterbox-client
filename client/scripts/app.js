@@ -41,7 +41,7 @@ var App = {
     // continually, instead of just once at the start.
 
 
-    // setInterval(App.fetch, 20000);
+    setInterval(App.fetch, 5000);
 
 
   },
@@ -51,7 +51,7 @@ var App = {
 
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data); //array of Objects
+      // console.log(data); //array of Objects
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
@@ -67,9 +67,10 @@ var App = {
 
 
 
-    FormView.initialize();
-    RoomsView.initialize();
+    // FormView.initialize();
+    // RoomsView.initialize();
     MessagesView.initialize();
+    App.stopSpinner();
 
   },
 
