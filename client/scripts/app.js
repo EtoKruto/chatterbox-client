@@ -41,7 +41,7 @@ var App = {
     // continually, instead of just once at the start.
 
 
-    setInterval(App.fetch, 5000);
+    setInterval(App.fetch, 25000);
 
 
   },
@@ -58,6 +58,7 @@ var App = {
       // reassign messages to data
       // cb(data);
       Messages._data = data;
+
 
       // reassign messages to Rooms
       // Rooms._data = data; // ADD SOMETHING

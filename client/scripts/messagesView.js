@@ -28,15 +28,15 @@ var MessagesView = {
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    // let styleVariable;
+    let styleVariable;
     // if (Friends._data[message.username]) {
-    //   styleVariable = 'background-color: rgba(0,0,0,0.64)';
+    styleVariable = 'background-color: rgba(255,0,0,0.64); border-radius: 30px;';
     // }
 
     //if Friends._data has a friend as the message.username then add attribute
 
 
-    var $singleMessageContainer = $('<div id="singleMessageContainer"></div>');
+    var $singleMessageContainer = $(`<div style="${styleVariable}"id="singleMessageContainer"></div>`);
 
     $singleMessageContainer.append(`<a class='username' id="${message.username}">Username: ${message.username}</a>`);
     $singleMessageContainer.append(`<div id='singleMessage'>Message:  ${message.text} </div>`);
