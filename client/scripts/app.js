@@ -14,18 +14,18 @@ var App = {
     roomname: '4chan'
   },
 
-  compiled: _.template(
-    '<div class=\'module module-movie\' style=\'background-image: url(<%= movieImage %>)\'>' +
-    '<div class=\'movie-info\'>' +
-    '<h3 class=\'movie-title\'>' +
-    '<%= movieTitle %>' +
-    '</h3>' +
-    '<p class=\'movie-director\'>' +
-    '<%= movieDirector %>' +
-    '</p>' +
-    '</div>' +
-    '</div>'
-  ),
+  // compiled: _.template(
+  //   '<div class=\'module module-movie\' style=\'background-image: url(<%= movieImage %>)\'>' +
+  //   '<div class=\'movie-info\'>' +
+  //   '<h3 class=\'movie-title\'>' +
+  //   '<%= movieTitle %>' +
+  //   '</h3>' +
+  //   '<p class=\'movie-director\'>' +
+  //   '<%= movieDirector %>' +
+  //   '</p>' +
+  //   '</div>' +
+  //   '</div>'
+  // ),
 
   initialize: function() {
     App.username = window.location.search.substr(10);
@@ -37,32 +37,40 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
 
 
-    setInterval(App.fetch, 5000);
-    // var i;
-    // var html = '';
-    // for (i = 0; i < data.movies.length; i++) {
-    //   html += compiled(data.movies[i]);
-    // }
-    // $('#movies').append(html);
+    // setInterval(App.fetch, 20000);
+
 
   },
 
   fetch: function(callback = ()=>{}) {
+
+
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
+      console.log(data); //array of Objects
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+      // reassign messages to data
+      // cb(data);
+      Messages._data = data;
 
-
+      // reassign messages to Rooms
+      // Rooms._data = data; // ADD SOMETHING
+      MessagesView.render();
 
     });
+
+
+
+    FormView.initialize();
+    RoomsView.initialize();
+    MessagesView.initialize();
+
   },
 
   startSpinner: function() {

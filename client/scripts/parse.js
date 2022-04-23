@@ -15,9 +15,9 @@ var Parse = {
       data: JSON.stringify(message),
       contentType: 'application/json',
       success: successCB,
-      error: function () {
+      error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-        console.error('chatterbox: Failed to send message');
+        console.error('chatterbox: Failed to send message', data);
       }
     });
   },

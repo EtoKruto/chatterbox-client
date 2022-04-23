@@ -5,9 +5,28 @@
 var Messages = {
 
   // TODO: Define how you want to store your messages.
-  _data: null,
+  _data: [],
+
+
+  // Parse.readAll(function() {
+  //   console.log('went great');
+  // }),
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
+  retrieve: function () {
+
+
+  },
+
+  add: function () {
+
+  },
+
+
+  update: function () {
+  }
+
+
 
 };
