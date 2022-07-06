@@ -9,7 +9,9 @@ var Friends = {
 
   // TODO: Define methods which allow you to add, toggle,
   // and check the friendship status of other users.
-
+  addFriend: function () {
+    return [...Friends._data];
+  },
 
   addFriend: function (username) {
     // add username as property of data, default value of true;
@@ -23,7 +25,7 @@ var Friends = {
 
 
   },
-  toggleStatus: function (usernameClicked) {
+  toggleStatus: function (usernameClicked, callback = () => {}) {
     //checks if friend is in data
     console.log('Clicked the Username:', usernameClicked);
 
@@ -34,13 +36,23 @@ var Friends = {
       // if  it exists then toggle
       // else addFriend
       Friends.addFriend(usernameClicked);
+    } else {
+      delete Friends._data[usernameClicked];
     }
 
+    // if(Friends.isFriend(name)) {
+    //   Friends.storage.delete(name);
+    //   callback(false);
+    // } else {
+    //   Friends._data.add(name);
+    //   callback(true);
+    // }
 
   },
 
-  checkStatus: function (usernameClicked, currentFriend) {
+  checkStatus: function (usernameClicked) {
     //if exist, return true
+    return Friends._data.has(name);
     //else return false
 
 

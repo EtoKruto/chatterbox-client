@@ -16,7 +16,7 @@ var RoomsView = {
     $('#rooms button').click(function() {
       Rooms.add();
     });
-
+    // RoomsView.$select.on(“change”, RoomsView.handleChange); RoomsView.$button.on(“click”, RoomsView.handleclick);
 
 
   },
@@ -26,7 +26,9 @@ var RoomsView = {
     // iterate through rooms (inside of rooms.js)
     // apply the RoomsView.renderRoom() function
 
-
+    // // RoomsView.$select.html(“”);
+    // Rooms.items().forEach(RoomsView.renderRoom);
+    // RoomsView.$select.val(Rooms.selected);
 
   },
 
@@ -36,7 +38,10 @@ var RoomsView = {
     // if message contains roomName,
     // use render function on that message
 
-
+    // var $option = $(“<option>”)
+    // .val(roomname)
+    // .text(roomname);
+    // RoomsView.$select.append($option);
     // console.log({message});
 
 
@@ -55,14 +60,18 @@ var RoomsView = {
   handleChange: function(event) {
     // TODO: Handle a user selecting a different room.
 
-
+    // Rooms.selected.RoomsView.$select.val();
+    // MessagesView.render();
 
   },
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
 
-
+    // var roomname = prompt("Enter a room name");
+    // if (roomname) {
+    // Rooms.add(roomname, () => RoomsView.render();
+    // MessagesView.render();
 
   }
 

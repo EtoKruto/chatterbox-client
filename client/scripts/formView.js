@@ -33,9 +33,6 @@ var FormView = {
     //roomname
     let textMessage = {};
     textMessage.roomname = $('select option').filter(':selected').val() || 'No Room :(';
-
-
-
     textMessage.username = window.location.search.slice(10);
     textMessage.text = $('input:text').val();
     // pass message to Parse.create
@@ -43,10 +40,21 @@ var FormView = {
     // console.log('this', this.id);
     // console.log(event);
 
+    //     //var message = {
+    //     username: App.username,
+    //     roomname: Rooms.selected || 'lobby',
+    //     text: FormView.$form.find(‘#message’).val() I
+    //   }
+    // },
 
     //clear the message after POST
     Parse.create(textMessage);
 
+    // the data callback will have the incoming data and we can extend out message object, this will have object ID which will add these to the message data structure
+    // Parse.create(message, (data) => {
+    //   Object.assign(message, data)
+    Messages.add(message, MessagesView.render);
+    // })
     // console.log('click!');
   },
 

@@ -41,7 +41,7 @@ var App = {
     // continually, instead of just once at the start.
 
 
-    setInterval(App.fetch, 25000);
+    setInterval(App.fetch, 5000);
 
 
   },
@@ -58,6 +58,13 @@ var App = {
       // reassign messages to data
       // cb(data);
       Messages._data = data;
+
+      // add {results} as a class
+      // ADDED to PARSE.readALL
+
+      // - The rooms and messages will re-render once we get the updates
+      // Messages.update(data, MessagesView.render)
+      // Rooms.update(data, RoomsView.render)
 
 
       // reassign messages to Rooms

@@ -10,18 +10,25 @@ var MessagesView = {
     // when this view loads.
 
     //maybe load the event handlers once all of the message load???
+    // MessagesView.$chats.on('click','usernmame', MessagesView.handleClick);
+
 
   },
 
   render: function() {
     // TODO: Render _all_ the messages.
     // iterate through messages, invoking renderMessage on it
-    $('#singleMessageContainer').remove();
+    MessagesView.$chats.html('');
+    // $('#singleMessageContainer').remove();
 
     for (let i = Messages._data.length - 1; i > 0; i--) {
       // message of Messages._data
       MessagesView.renderMessage(Messages._data[i]);
     }
+
+    // messages.forEach(message => {
+    //   MessagesView.renderMessage(message);
+    // });
 
 
   },
@@ -29,12 +36,11 @@ var MessagesView = {
   renderMessage: function(message) {
     // TODO: Render a single message.
     let styleVariable;
-    // if (Friends._data[message.username]) {
-    styleVariable = 'background-color: rgba(255,0,0,0.64); border-radius: 30px;';
-    // }
+    if (Friends._data[message.username]) {
+      styleVariable = 'background-color: rgba(255,0,0,0.34);';
+    }
 
     //if Friends._data has a friend as the message.username then add attribute
-
 
     var $singleMessageContainer = $(`<div style="${styleVariable}"id="singleMessageContainer"></div>`);
 
@@ -52,11 +58,23 @@ var MessagesView = {
     MessagesView.$chats.prepend($singleMessageContainer);
 
 
+    // var $message = MessagesView.render(message);
+    // MessagesView.$chats.prepend($message);
+
+
+
+
   },
 
   handleClick: function(username) {
     // TODO: handle a user clicking on a message
     // (this should add the sender to the user's friend list).
+
+    // check if user exists and callback the render once done
+    // var username = $(event.target).data('username');
+    // if (username === undefined) { return; }
+    // Friends.toggleStatus(username, MessagesView.render);
+
     console.log('hi, user is:', username);
     Friends.toggleStatus(username);
 

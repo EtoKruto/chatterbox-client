@@ -19,14 +19,37 @@ var Messages = {
 
   },
 
-  add: function () {
+  items: function () {
+    // return Message._data[message.objectID] = message;
+
 
   },
 
+  add: function (message, callback) {
 
-  update: function () {
-  }
+    // Message._data[message.objectID] = Message.conform(message);
+
+    // callback(Messages.items());
+  },
 
 
+  update: function (messages, callback) {
+
+    // ADDED
+    // for (const message of messages) {
+    // Messages.add(message);
+    // }
+    // callback(Messages.items());
+    // Message.storage = Message._data.concat(messages);
+
+  },
+
+  conform: function (message) {
+    // messages.text = message.text || '';
+    // messages.username = message.username || '';
+    // messages.roomname = message.roomname || '';
+    // return message;
+
+  },
 
 };

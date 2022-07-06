@@ -7,13 +7,18 @@ var MessageView = {
   // TODO: Update this template accordingly.
   // render: _.template(
 
-  //   "<div class='singleMessageContainer'>" +
-  //     `<div class=\'username\'>" +
-  //     ${this.message.username}
-  //     "</div>` +
-  //     `<div class=\'singleMessage\'>${this.message.text}</div>` +
-  //     `<div class='roomName'><%=message.roomName></div>` +
-  //   '</div>'
+  // '<div class="chat>' +
+  // '<div class="username">' +
+  // data-username="<%- username %>"
+  // `<div class=\'singleMessage\'>${this.message.text}</div>` +
+  // '<div class=\'roomName\'><%=message.roomName></div>' +
+  // '</div>'
+
+  // <div class=“chat”>
+  // <div class=“username”
+  // class=“<%- Friends.isFriend(username) ? ‘friend’ : %>” data-username=“<%- username %>”
+
+  // <%- username %> <div> <div><%- text %><div> <div> )
 
 
   // //   "<div class='module module-movie' style='background-image: url(<%= movieImage %> '>" +
